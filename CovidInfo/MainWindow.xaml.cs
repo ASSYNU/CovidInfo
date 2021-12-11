@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CovidInfo.Core;
 
 namespace CovidInfo
 {
@@ -23,6 +25,39 @@ namespace CovidInfo
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            corona corona = new corona();
+            CovidSpecificInfo recivedCoronaInfo = corona.getCoronaInfo("Poland");
+            if(recivedCoronaInfo != null)
+            {
+                showCovidData(recivedCoronaInfo);
+            }
+        }
+
+        private void showCovidData(CovidSpecificInfo data)
+        {
+            country.Text = data.country.ToString();
+            cases.Text = data.cases.ToString();
+            todayCases.Text = data.todayCases.ToString();
+            deaths.Text = data.deaths.ToString();
+            todayDeaths.Text = data.todayDeaths.ToString();
+            recovered.Text = data.recovered.ToString();
+            todayRecovered.Text = data.todayRecovered.ToString();
+            active.Text = data.active.ToString();
+            critical.Text = data.critical.ToString();
+            casesPerOneMillion.Text = data.casesPerOneMillion.ToString();
+            deathsPerOneMillion.Text = data.deathsPerOneMillion.ToString();
+            tests.Text = data.tests.ToString();
+            testsPerOneMillion.Text = data.testsPerOneMillion.ToString();
+            oneCasePerPeople.Text = data.oneCasePerPeople.ToString();
+            oneDeathPerPeople.Text = data.oneDeathPerPeople.ToString();
+            oneTestPerPeople.Text = data.oneTestPerPeople.ToString();
+            activePerOneMillion.Text = data.activePerOneMillion.ToString();
+            recoveredPerOneMillion.Text = data.recoveredPerOneMillion.ToString();
+            criticalPerOneMillion.Text = data.criticalPerOneMillion.ToString();
         }
     }
 }

@@ -5,8 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CovidInfo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Covid-19 Info" 
+        Height="450" 
+        Width="800"
+        Loaded="Window_Loaded">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition  />
+            <RowDefinition  />
+            <RowDefinition  />
+            <RowDefinition  />
+            <RowDefinition  />
+            <RowDefinition  />
+            <RowDefinition  />
+            <RowDefinition  />
+            <RowDefinition  />
+            <RowDefinition  />
+            <RowDefinition  />
+            <RowDefinition  />
+            <RowDefinition  />
+            <RowDefinition  />
+            <RowDefinition  />
+            <RowDefinition  />
+            <RowDefinition  />
+            <RowDefinition  />
+            <RowDefinition  />
+            <RowDefinition  />
+        </Grid.RowDefinitions>
 
+        <TextBox Name="country" Grid.Row="1">Corona Info Text: country</TextBox>
+        <TextBox Name="cases" Grid.Row="2">Corona Info Text: cases</TextBox>
+        <TextBox Name="todayCases" Grid.Row="3">Corona Info Text: todayCases</TextBox>
+        <TextBox Name="deaths" Grid.Row="4">Corona Info Text: deaths</TextBox>
+        <TextBox Name="todayDeaths" Grid.Row="5">Corona Info Text: todayDeaths</TextBox>
+        <TextBox Name="recovered" Grid.Row="6">Corona Info Text: recovered</TextBox>
+        <TextBox Name="todayRecovered" Grid.Row="7">Corona Info Text: todayRecovered</TextBox>
+        <TextBox Name="active" Grid.Row="8">Corona Info Text: active</TextBox>
+        <TextBox Name="critical" Grid.Row="9">Corona Info Text: critical</TextBox>
+        <TextBox Name="casesPerOneMillion" Grid.Row="10">Corona Info Text: casesPerOneMillion</TextBox>
+        <TextBox Name="deathsPerOneMillion" Grid.Row="11">Corona Info Text: deathsPerOneMillion</TextBox>
+        <TextBox Name="tests" Grid.Row="12">Corona Info Text: tests</TextBox>
+        <TextBox Name="testsPerOneMillion" Grid.Row="13">Corona Info Text: testsPerOneMillion</TextBox>
+        <TextBox Name="oneCasePerPeople" Grid.Row="14">Corona Info Text: oneCasePerPeople</TextBox>
+        <TextBox Name="oneDeathPerPeople" Grid.Row="15">Corona Info Text: oneDeathPerPeople</TextBox>
+        <TextBox Name="oneTestPerPeople" Grid.Row="16">Corona Info Text: oneTestPerPeople</TextBox>
+        <TextBox Name="activePerOneMillion" Grid.Row="17">Corona Info Text: activePerOneMillion</TextBox>
+        <TextBox Name="recoveredPerOneMillion" Grid.Row="18">Corona Info Text: recoveredPerOneMillion</TextBox>
+        <TextBox Name="criticalPerOneMillion" Grid.Row="19">Corona Info Text: criticalPerOneMillion</TextBox>
     </Grid>
 </Window>
