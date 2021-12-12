@@ -46,8 +46,6 @@ namespace CovidInfo
             todayDeaths.Text = data.todayDeaths.ToString();
             recovered.Text = data.recovered.ToString();
             todayRecovered.Text = data.todayRecovered.ToString();
-            active.Text = data.active.ToString();
-            critical.Text = data.critical.ToString();
             casesPerOneMillion.Text = data.casesPerOneMillion.ToString();
             deathsPerOneMillion.Text = data.deathsPerOneMillion.ToString();
             tests.Text = data.tests.ToString();
@@ -55,9 +53,7 @@ namespace CovidInfo
             oneCasePerPeople.Text = data.oneCasePerPeople.ToString();
             oneDeathPerPeople.Text = data.oneDeathPerPeople.ToString();
             oneTestPerPeople.Text = data.oneTestPerPeople.ToString();
-            activePerOneMillion.Text = data.activePerOneMillion.ToString();
             recoveredPerOneMillion.Text = data.recoveredPerOneMillion.ToString();
-            criticalPerOneMillion.Text = data.criticalPerOneMillion.ToString();
         }
     }
 }

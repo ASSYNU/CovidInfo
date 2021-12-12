@@ -6,51 +6,281 @@
         xmlns:local="clr-namespace:CovidInfo"
         mc:Ignorable="d"
         Title="Covid-19 Info" 
-        Height="450" 
+        Loaded="Window_Loaded" 
+        MinWidth="800" 
+        MinHeight="600"
         Width="800"
-        Loaded="Window_Loaded">
-    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
-        <Grid.RowDefinitions>
-            <RowDefinition  />
-            <RowDefinition  />
-            <RowDefinition  />
-            <RowDefinition  />
-            <RowDefinition  />
-            <RowDefinition  />
-            <RowDefinition  />
-            <RowDefinition  />
-            <RowDefinition  />
-            <RowDefinition  />
-            <RowDefinition  />
-            <RowDefinition  />
-            <RowDefinition  />
-            <RowDefinition  />
-            <RowDefinition  />
-            <RowDefinition  />
-            <RowDefinition  />
-            <RowDefinition  />
-            <RowDefinition  />
-            <RowDefinition  />
-        </Grid.RowDefinitions>
+        Height="600"
+        Background="#242424">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto">
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="15,0,15,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
-        <TextBox Name="country" Grid.Row="1">Corona Info Text: country</TextBox>
-        <TextBox Name="cases" Grid.Row="2">Corona Info Text: cases</TextBox>
-        <TextBox Name="todayCases" Grid.Row="3">Corona Info Text: todayCases</TextBox>
-        <TextBox Name="deaths" Grid.Row="4">Corona Info Text: deaths</TextBox>
-        <TextBox Name="todayDeaths" Grid.Row="5">Corona Info Text: todayDeaths</TextBox>
-        <TextBox Name="recovered" Grid.Row="6">Corona Info Text: recovered</TextBox>
-        <TextBox Name="todayRecovered" Grid.Row="7">Corona Info Text: todayRecovered</TextBox>
-        <TextBox Name="active" Grid.Row="8">Corona Info Text: active</TextBox>
-        <TextBox Name="critical" Grid.Row="9">Corona Info Text: critical</TextBox>
-        <TextBox Name="casesPerOneMillion" Grid.Row="10">Corona Info Text: casesPerOneMillion</TextBox>
-        <TextBox Name="deathsPerOneMillion" Grid.Row="11">Corona Info Text: deathsPerOneMillion</TextBox>
-        <TextBox Name="tests" Grid.Row="12">Corona Info Text: tests</TextBox>
-        <TextBox Name="testsPerOneMillion" Grid.Row="13">Corona Info Text: testsPerOneMillion</TextBox>
-        <TextBox Name="oneCasePerPeople" Grid.Row="14">Corona Info Text: oneCasePerPeople</TextBox>
-        <TextBox Name="oneDeathPerPeople" Grid.Row="15">Corona Info Text: oneDeathPerPeople</TextBox>
-        <TextBox Name="oneTestPerPeople" Grid.Row="16">Corona Info Text: oneTestPerPeople</TextBox>
-        <TextBox Name="activePerOneMillion" Grid.Row="17">Corona Info Text: activePerOneMillion</TextBox>
-        <TextBox Name="recoveredPerOneMillion" Grid.Row="18">Corona Info Text: recoveredPerOneMillion</TextBox>
-        <TextBox Name="criticalPerOneMillion" Grid.Row="19">Corona Info Text: criticalPerOneMillion</TextBox>
-    </Grid>
+            <TextBlock Grid.Row="0" Name="country" HorizontalAlignment="Center" FontSize="40" FontWeight="Normal" FontFamily="Roboto" Margin="15">Country</TextBlock>
+            <Border Grid.Row="1" Background="#303030" CornerRadius="10">
+                <Grid Margin="8">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="1" Margin="0,20,0,0" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition  />
+                            <RowDefinition  />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0" FontSize="25" FontWeight="Normal" FontFamily="Roboto" Margin="10,0,0,0">Today</TextBlock>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border Background="#155d27" CornerRadius="10" Grid.Column="0" Margin="5,5,5,5" MinHeight="75">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition  />
+                                        <RowDefinition  />
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Grid.Row="0" FontFamily="Roboto"  Margin="10,10,5,0" Text="Deaths" />
+                                    <TextBlock Name="todayDeaths" Grid.Row="1" FontFamily="Roboto" Margin="15,0,5,10">0</TextBlock>
+                                </Grid>
+                            </Border>
+
+                            <Border Background="#208b3a" CornerRadius="10" Grid.Column="1"  Margin="5,5,5,5" MinHeight="75">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition  />
+                                        <RowDefinition  />
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Grid.Row="0" FontFamily="Roboto" Margin="10,10,5,0" Text="Cases" />
+                                    <TextBlock Name="todayCases" Grid.Row="1" FontFamily="Roboto"  Margin="15,0,5,10" >0</TextBlock>
+                                </Grid>
+                            </Border>
+
+                            <Border Grid.Column="2" Background="#2dc653" Margin="5,5,5,5" CornerRadius="10" MinHeight="75">
+                                <Grid >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition  />
+                                        <RowDefinition  />
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Grid.Row="0" FontFamily="Roboto" Margin="10,10,5,0" Text="Recovered" />
+                                    <TextBlock Name="todayRecovered" Grid.Row="1" FontFamily="Roboto" Margin="15,0,5,10" >0</TextBlock>
+                                </Grid>
+                            </Border>
+
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="2" Margin="0,20,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition  />
+                            <RowDefinition  />
+                            <RowDefinition  />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock FontFamily="Roboto" FontSize="25">Total</TextBlock>
+
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border Background="#023e8a" CornerRadius="10" Grid.Column="0"  Margin="5,5,5,5" MinHeight="75">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition  />
+                                        <RowDefinition  />
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Grid.Row="0" FontFamily="Roboto" Margin="10,10,5,0" Text="Deaths" />
+                                    <TextBlock Grid.Row="1" x:Name="deaths" Grid.Column="0" FontFamily="Roboto" Margin="15,0,5,10" Text="0"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Background="#0077b6" CornerRadius="10" Grid.Column="1"  Margin="5,5,5,5" MinHeight="75">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition  />
+                                        <RowDefinition  />
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Grid.Row="0" FontFamily="Roboto" Margin="10,10,5,0" Text="Cases" />
+                                    <TextBlock Grid.Row="1" x:Name="cases" Grid.Column="1" FontFamily="Roboto" Margin="15,0,5,10" Text="0"/>
+                                </Grid>
+                            </Border>
+
+                            
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border Background="#0096c7" CornerRadius="10" Grid.Column="1"  Margin="5,5,5,5" MinHeight="75">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition  />
+                                        <RowDefinition  />
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Grid.Row="0" FontFamily="Roboto" Margin="10,10,5,0" Text="Recovered" />
+                                    <TextBlock Grid.Row="1" x:Name="recovered" Grid.Column="2" FontFamily="Roboto" Margin="15,0,5,10" Text="0"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Background="#00b4d8" CornerRadius="10" Grid.Column="0"  Margin="5,5,5,5" MinHeight="75">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition  />
+                                        <RowDefinition  />
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Grid.Row="0" FontFamily="Roboto" Margin="10,10,5,0" Text="Tests" />
+                                    <TextBlock Grid.Row="1" x:Name="tests" Grid.Column="2" FontFamily="Roboto" Margin="15,0,5,10" Text="0"/>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="3" Margin="0,20,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition  />
+                            <RowDefinition  />
+                            <RowDefinition  />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock FontFamily="Roboto" FontSize="25">Per Milion</TextBlock>
+
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border Background="#85182a" CornerRadius="10" Grid.Column="0"  Margin="5,5,5,5">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition  />
+                                        <RowDefinition  />
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Grid.Row="0" FontFamily="Roboto" Margin="10,10,5,0" Text="Cases" />
+                                    <TextBlock Grid.Row="1" x:Name="casesPerOneMillion" Grid.Column="0" FontFamily="Roboto" Margin="15,0,5,10" Text="0"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Background="#b21e35" CornerRadius="10" Grid.Column="1"  Margin="5,5,5,5">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition  />
+                                        <RowDefinition  />
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Grid.Row="0" FontFamily="Roboto" Margin="10,10,5,0" Text="Deaths" />
+                                    <TextBlock Grid.Row="1" x:Name="deathsPerOneMillion" Grid.Column="1" FontFamily="Roboto" Margin="15,0,5,10" Text="0"/>
+                                </Grid>
+                            </Border>
+
+                            
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border Background="#c71f37" CornerRadius="10" Grid.Column="0"  Margin="5,5,5,5">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition  />
+                                        <RowDefinition  />
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Grid.Row="0" FontFamily="Roboto" Margin="10,10,5,0" Text="Recovered" />
+                                    <TextBlock Grid.Row="1" x:Name="recoveredPerOneMillion" Grid.Column="1" FontFamily="Roboto" Margin="15,0,5,10" Text="0"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Background="#e01e37" CornerRadius="10" Grid.Column="1"  Margin="5,5,5,5">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition  />
+                                        <RowDefinition  />
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Grid.Row="0" FontFamily="Roboto" Margin="10,10,5,0" Text="Tests" />
+                                    <TextBlock Grid.Row="1" x:Name="testsPerOneMillion" Grid.Column="2" FontFamily="Roboto" Margin="15,0,5,10" Text="0"/>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="4" Margin="0,20,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition  />
+                            <RowDefinition  />
+                        </Grid.RowDefinitions>
+
+                        <TextBlock FontSize="25">Per People</TextBlock>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border Background="#6d23b6" CornerRadius="10" Grid.Column="0"  Margin="5,5,5,5">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition  />
+                                        <RowDefinition  />
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Grid.Row="0" FontFamily="Roboto" Margin="10,10,5,0" Text="Cases per one man" />
+                                    <TextBlock Grid.Row="1" x:Name="oneCasePerPeople" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Roboto" Margin="15,0,5,10" Text="0"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Background="#822faf" CornerRadius="10" Grid.Column="1"  Margin="5,5,5,5">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition  />
+                                        <RowDefinition  />
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Grid.Row="0" FontFamily="Roboto" Margin="10,10,5,0" Text="Deaths per one man" />
+                                    <TextBlock Grid.Row="1" x:Name="oneDeathPerPeople" Grid.Column="1" Grid.ColumnSpan="2" FontFamily="Roboto" Margin="15,0,5,10" Text="0"/>
+                                </Grid>
+                            </Border>
+
+                            <Border Background="#973aa8" CornerRadius="10" Grid.Column="2"  Margin="5,5,5,5">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition  />
+                                        <RowDefinition  />
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Grid.Row="0" FontFamily="Roboto" Margin="10,10,5,0" Text="Tests per one man" />
+                                    <TextBlock Grid.Row="1" x:Name="oneTestPerPeople" Grid.Column="2" Grid.ColumnSpan="2" FontFamily="Roboto" Margin="15,0,5,10" Text="0"/>
+                                </Grid>
+                            </Border>
+                        </Grid>
+
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+    </ScrollViewer>
+
 </Window>

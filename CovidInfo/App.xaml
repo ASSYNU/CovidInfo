@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:CovidInfo"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#FFEFEFEF" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontFamily" Value="Roboto"/>
+        </Style>
     </Application.Resources>
 </Application>
