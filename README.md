@@ -5,11 +5,11 @@ Application (yet) only for windows with all important COVID-19 info in C#!
 ![UI footage](UI.png)
 
 # Todo
-[-] Choseing Country - In progress
-[-] Refreshing every 5 secounds
-[-] Refresh button
-[-] Auto detecting location
+- [ ] Choseing Country - In progress
+- [ ] Refreshing every 5 secounds
+- [ ] Refresh button
+- [ ] Auto detecting location
 
 ### Devices
-[-] Android Port
-[-] MacOS port
+- [ ] Android Port
+- [ ] MacOS port
