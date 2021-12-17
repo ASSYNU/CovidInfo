@@ -7,20 +7,20 @@ using System.Threading.Tasks;
 
 namespace CovidInfo.Core
 {
-    public class corona
+    public class Corona
     {
         // Api Domain   =>  https://corona.lmao.ninja/v2/countries/Poland
         // Docs         =>  https://documenter.getpostman.com/view/11144369/Szf6Z9B3?version=latest
 
-        public CovidSpecificInfo getCoronaInfo(string Country)
+        public CovidSpecificInfo? getCoronaInfo(string Country)
         {
             requests requests = new requests();
-            string recived = requests.requestCoronaInfo(Country).Result;
+            string received = requests.RequestCoronaInfo(Country).Result;
             #pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
-            CovidSpecificInfo CovidSpecificInfo = JsonSerializer.Deserialize<CovidSpecificInfo>(recived);
+            CovidSpecificInfo? covidSpecificInfo = JsonSerializer.Deserialize<CovidSpecificInfo>(received);
             #pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
             #pragma warning disable CS8602 // Dereference of a possibly null reference.
-            return CovidSpecificInfo;
+            return covidSpecificInfo;
             #pragma warning restore CS8602 // Dereference of a possibly null reference.
         }
     }

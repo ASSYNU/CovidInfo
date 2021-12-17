@@ -15,12 +15,12 @@ namespace CovidInfo.Core
     {
         private static readonly HttpClient client = new HttpClient();
 
-        public static async Task<String> requestCoronaInfo(string country)
+        public static async Task<String> RequestCoronaInfo(string country)
         {
-            var client = new RestClient("https://corona.lmao.ninja/v2/countries/"+country+"?sort");
-            client.Timeout = -1;
+            var restClient = new RestClient("https://corona.lmao.ninja/v2/countries/"+country+"?sort");
+            restClient.Timeout = -1;
             var request = new RestRequest(Method.GET);
-            IRestResponse response = client.Execute(request);
+            IRestResponse response = restClient.Execute(request);
             return response.Content;
         }
     }
