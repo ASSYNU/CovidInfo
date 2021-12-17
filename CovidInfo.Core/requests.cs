@@ -17,7 +17,7 @@ namespace CovidInfo.Core
 
         public static async Task<String> RequestCoronaInfo(string country)
         {
-            var restClient = new RestClient("https://corona.lmao.ninja/v2/countries/"+country+"?sort");
+            var restClient = new RestClient("https://disease.sh/v3/covid-19/countries/"+country+"?sort");
             restClient.Timeout = -1;
             var request = new RestRequest(Method.GET);
             IRestResponse response = restClient.Execute(request);
