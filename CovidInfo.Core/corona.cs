@@ -8,7 +8,7 @@ namespace CovidInfo.Core
         // Api Domain   =>  https://disease.sh/v3/covid-19/countries/
         // Docs         =>  https://documenter.getpostman.com/view/11144369/Szf6Z9B3?version=latest
 
-        public CovidSpecificInfo? getCoronaInfo(string  country = "")
+        public CovidSpecificInfo? getCoronaInfo(string  country)
         {
             RequestAPI requests = new RequestAPI();
             string received = requests.RequestCoronaInfo(country).Result;

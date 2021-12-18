@@ -8,11 +8,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Refresh_icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="RestSharp" Version="106.15.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\CovidInfo.Core\CovidInfo.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Refresh_icon.png" />
   </ItemGroup>
 
 </Project>
