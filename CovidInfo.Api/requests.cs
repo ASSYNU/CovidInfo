@@ -1,21 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Net.Http;
-using System.Net.Http.Headers;
+using System.Threading.Tasks;
 using RestSharp;
-using RestSharp.Authenticators;
 
-
-namespace CovidInfo.Core
+namespace CovidInfo.Api
 {
-    internal class requests
+    public class RequestAPI
     {
         private static readonly HttpClient client = new HttpClient();
 
-        public static async Task<String> RequestCoronaInfo(string country)
+        public async Task<String> RequestCoronaInfo(string country)
         {
             var restClient = new RestClient("https://disease.sh/v3/covid-19/countries/"+country+"?sort");
             restClient.Timeout = -1;
@@ -23,5 +17,5 @@ namespace CovidInfo.Core
             IRestResponse response = restClient.Execute(request);
             return response.Content;
         }
-    }
+    }   
 }

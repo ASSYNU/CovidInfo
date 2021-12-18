@@ -10,4 +10,8 @@
     <PackageReference Include="RestSharp" Version="106.15.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CovidInfo.Api\CovidInfo.Api.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,26 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Globalization;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using CovidInfo.Core;
 
 namespace CovidInfo
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -31,14 +14,13 @@ namespace CovidInfo
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Corona corona = new Corona();
-            CovidSpecificInfo receivedCoronaInfo = corona.getCoronaInfo("Poland");
+            CovidSpecificInfo? receivedCoronaInfo = corona.getCoronaInfo("Poland");
             if(receivedCoronaInfo != null) ShowCovidData(receivedCoronaInfo);
             AddCountriesList();
         }
 
-        private void ShowCovidData(CovidSpecificInfo data)
+        private void ShowCovidData(CovidSpecificInfo? data)
         {
-            // country.Text = data.country.ToString();
             cases.Text = data.cases.ToString();
             todayCases.Text = data.todayCases.ToString();
             deaths.Text = data.deaths.ToString();
@@ -60,7 +42,7 @@ namespace CovidInfo
             countries countries = new countries();
             foreach (var country in countries.All())
             {
-                CountrySelectMenu.Items.Add(country);
+                // CountrySelectMenu.Items.Add(country);
             }
         }
     }
