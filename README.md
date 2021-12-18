@@ -6,8 +6,6 @@ Application (yet) only for windows with all important COVID-19 info in C#!
 
 # Todo
 - [ ] Choseing Country - In progress
-- [ ] Refreshing every 5 secounds
-- [ ] Refresh button
 - [ ] Auto detecting location
 - [ ] Better, windows based UI
 - [ ] Language selection
