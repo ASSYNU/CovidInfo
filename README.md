@@ -2,7 +2,7 @@
 Application (yet) only for windows with all important COVID-19 info in C#!
 
 # UI
-![UI footage](UI.png)
+![App UI footage](UI.png)
 
 # Todo
 - [ ] Choosing Country
